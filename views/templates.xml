@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="script[last()]" position="after">
+			<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script type="text/javascript" src="/google_lang/static/src/js/language.js"></script>
+        </xpath>
+ </template>   
+
+ <template id="layout" name="Main layout" inherit_id="portal.frontend_layout">
+ 	    <xpath expr="//div[hasclass('o_footer_copyright')]//span[@t-field='res_company.name']" position="after">
+	        <div id="google_translate_element"></div>
+	    </xpath>
+ 	        <xpath expr="//div[@id='wrapwrap']" position="after">
+            <script>
+
+
+
+
+            	function googleTranslateElementInit() {
+						console.log('me called')
+					  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+					}
+
+
+                    console.log(' I am woking')
+            </script>
+        
+    </xpath>
+
+</template>
+</odoo>
